@@ -1,8 +1,12 @@
+Attention: this repository is unmaintained and incomplete. It is an example only and not for use anywhere important.
+
 # Example Code Test
 
-This was built for a code test I completed recently.
+This project was written for a code test I completed recently.
 
-Is it perfect? No. It took about 3 hours and is a basic express/mongoDB API with a create-react-app based front end. Please see the [GitHub Issues](https://github.com/AlexOwen/example-code-test/issues) for the improvements it desperately needs.
+The brief was to create a React-based form with three fields, one of which gets data from the backend to populate it. The project should have an API and basic error checking/testing. There should also be a second page which shows all previous responses entered into the form.
+
+Is it perfect? No, not by any means. It took about 3 hours and is a basic express/mongoDB API with a create-react-app based front end. Please see the [GitHub Issues](https://github.com/AlexOwen/example-code-test/issues) for the improvements it desperately needs.
 
 ## Overview
 
