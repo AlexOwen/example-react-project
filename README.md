@@ -30,11 +30,13 @@ This application requires:
 - To run the application, `npm start` from the back end folder and separately from the front end folder.
 - The front end runs on port 3000, and the back end on 3001.
 
-**Note** The react application runs in debug/development mode.
+**Note:** The react application runs in debug/development mode.
 
 ## Testing
 
 `npm test` from either the front or back end folder.
+
+**Note:** Back end testing is currently not present but can be manually tested using the Loopback explorer.
 
 ## Deleting data
 
