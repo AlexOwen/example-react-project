@@ -1,9 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Submit from './submit.js';
+import { act } from 'react-dom/test-utils';
 
 test('renders an submit button', () => {
-  const { getByTestId } = render(<Submit />);
-  const submitElement = getByTestId('submit_button');
+  let submitElement;
+
+  act(() => {
+    const { getByTestId } = render(<Submit />);
+    submitElement = getByTestId('submit_button');
+  });
+  
   expect(submitElement).toBeInTheDocument();
 });

@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
+/**
+ * A select input element that gets its values from a URL
+ * 
+ * @param { function } setValid Function to call when the input to the field is valid
+ * @param { function } onChange Function to call when the input changes
+ * @param { string } source The URL to fetch the items from
+ * @param { string } label The label text for the input
+ */
 const DropDown = ({ setValid, onChange, source, label }) => {
 
   const [ listItems, setListItems ] = useState([]);
@@ -8,10 +16,15 @@ const DropDown = ({ setValid, onChange, source, label }) => {
 
   // Fetch the contents of the list from a remote server
   useEffect(() => {
-    async function fetchData() { 
-      const response = await fetch(source);
-      const jsonResponse = await response.json();
-      setListItems(jsonResponse);
+    async function fetchData() {
+      let items = [];
+      try {
+        const response = await fetch(source);
+        items = await response.json();
+      } catch (err) {
+        console.error('Failed to fetch list items', err);
+      }
+      setListItems(items);
     }
     fetchData();
   }, [ source ]);

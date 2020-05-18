@@ -2,11 +2,11 @@ Attention: this repository is unmaintained and incomplete. It is an example only
 
 # Example Code Test
 
-This project was written for a code test I completed recently.
+This project was written for a code test using React and Loopback.
 
 The brief was to create a React-based form with three fields, one of which gets data from the backend to populate it. The project should have an API and basic error checking/testing. There should also be a second page which shows all previous responses entered into the form.
 
-Is it perfect? No, not by any means. It took about 3 hours and is a basic express/mongoDB API with a create-react-app based front end. Please see the [GitHub Issues](https://github.com/AlexOwen/example-code-test/issues) for the improvements it desperately needs.
+It is a Loopback 4 back end with a create-react-app based front end. Please see the [GitHub Issues](https://github.com/AlexOwen/example-code-test/issues) for the improvements it needs.
 
 ## Overview
 
@@ -28,6 +28,7 @@ This application requires:
 
 - Ensure MongoDB is running on localhost using the default port.
 - To run the application, `npm start` from the back end folder and separately from the front end folder.
+- The front end runs on port 3000, and the back end on 3001.
 
 **Note** The react application runs in debug/development mode.
 
@@ -35,10 +36,14 @@ This application requires:
 
 `npm test` from either the front or back end folder.
 
+## Deleting data
+
+All data can be used by sending DELETE to http://localhost:3000/answers, or the same using the Loopback explorer at http://localhost:3001/explorer/#/AnswerController/AnswerController.deleteAll
+
 ## Notes
 
 - The front end is based on create-react-app and should behave exactly as expected.
-- The back end is an express based application and generally follows normal conventions.
+- The back end is a Loopback API and follows normal conventions. The explorer can be accessed on http://localhost:3001/explorer/
 
 ## Troubleshooting
 
