@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { withRouter } from "react-router-dom";
+import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
+import useValidity from '../hooks/useValidity.js';
 
 import Email from './form/email.js';
 import Select from './form/select.js';
@@ -17,22 +18,11 @@ function FormPage({ history }) {
   // Store the form data in the state
   const [ formData, setFormData ] = useState({});
 
-  // Store whether each field is valid
-  const [ emailValid, setEmailValid ] = useState(false);
-  const [ selectValid, setSelectValid ] = useState(false);
-  const [ commentValid, setCommentValid ] = useState(false);
-
   // Store whether the form is valid
   const [ formValid, setFormValid ] = useState(false);
 
-  // When any field's validity changes, update the form's validity
-  useEffect(() => {
-    if (emailValid && selectValid && commentValid) {
-      setFormValid(true);
-    } else {
-      setFormValid(false);
-    }
-  }, [ emailValid, selectValid, commentValid ]);
+  // Check whether each field is valid
+  const [ setEmailValid, setSelectValid, setCommentValid ] = useValidity([ 'email', 'select', 'comment' ], setFormValid);
 
   // When a value changes in the form, update the state
   function updateFormData(key, value) {
